@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="calculadora.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" class="calculator-screen" disabled placeholder="0" id="tela">
+    <div class="calculator-buttons" onclick="calcular()">
+        <button onclick="apagarValor()" id="c" value="c" class="button clear">C</button>
+        <button onclick="adicionatela('/')" id="/" value="/" class="button operator">/</button>
+        <button onclick="adicionatela('*')" id="*" value="*" class="button operator">*</button>
+        <button onclick="adicionatela('-')" id="-" value="-" class="button operator">-</button>
+        <button onclick="adicionatela(7)" id="7" value="7" class="button">7</button>
+        <button onclick="adicionatela(8)" id="8" value="8" class="button">8</button>
+        <button onclick="adicionatela(9)" id="9" value="9" class="button">9</button>
+        <button onclick="adicionatela('+')" id="+" value="+" class="button operator">+</button>
+        <button onclick="adicionatela(4)" id="4" value="4" class="button">4</button>
+        <button onclick="adicionatela(5)" id="5" value="5" class="button">5</button>
+        <button onclick="adicionatela(6)" id="6" value="6" class="button">6</button>
+        <button id="." value="." class="button">.</button>
+        <button onclick="adicionatela(1)" id="1" value="1" class="button">1</button>
+        <button onclick="adicionatela(2)" id="2" value="2" class="button">2</button>
+        <button onclick="adicionatela(3)" id="3" value="3" class="button">3</button>
+        <button onclick="resultado()" id="=" value="=" class="button equal">=</button>
+        <button onclick="adicionatela(0)" id="0" value="0" class="button">0</button>
+
+        
+    </div>
+</div>
+
+<script>
+    const tela = document.getElementById('tela')
+
+    function adicionatela(valor){
+        tela.value += valor
+        
+       
+    }
+
+    function resultado(){
+        const resultadoFinal = eval(tela.value)
+        tela.value = resultadoFinal
+
+    }
+
+    function apagarValor(){
+        tela.value = ''
+    }
+</script>
+
+</body>
+</html>
